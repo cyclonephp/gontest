@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <start>
+    <ref name="request"/>
+  </start>
+  <define name="request">
+    <element name="request">
+      <optional>
+        <attribute name="count"/>
+        <attribute name="parallel"/>
+        <attribute name="maxExecTime"/>
+      </optional>
+      <zeroOrMore>
+        <element name="header">
+          <attribute name="key"/>
+          <attribute name="value"/>
+        </element>
+      </zeroOrMore>
+      <optional>
+        <element name="nextRequests">
+          <oneOrMore>
+            <ref name="request"/>
+          </oneOrMore>
+        </element>
+      </optional>
+    </element>
+  </define>
+</grammar>
