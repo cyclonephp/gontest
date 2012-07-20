@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<request count="20" parallel="true" maxExecTime="1sec">
+<request count="20" parallel="true" maxExecTime="1sec" method="get">
 	<header key="accept-language" value="hu_HU"/>
 	<xpathPattern query="/div/div.content/ul.mylist/li" count="10"/>
 	<cssPattern query="#cnt > p.myclass > a[rel=lightbox]" minCount="5" maxCount="10"/>

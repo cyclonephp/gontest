@@ -9,6 +9,7 @@
         <attribute name="count"/>
         <attribute name="parallel"/>
         <attribute name="maxExecTime"/>
+        <attribute name="method"/>
       </optional>
       <zeroOrMore>
         <element name="header">

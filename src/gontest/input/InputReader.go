@@ -11,9 +11,11 @@ type Header struct {
 
 type Request struct {
     Headers []Header `xml:"header"`
+    Method string `xml:"method,attr"`
     Count int `xml:"count,attr"`
     Parallel bool `xml:"parallel,attr"`
     MaxExecTime string `xml:"maxExecTime,attr"`
+    NextRequests []Request `xml:"nextRequests>request"`
 }
 
 
