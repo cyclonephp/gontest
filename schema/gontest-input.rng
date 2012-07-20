@@ -3,12 +3,20 @@
   <start>
     <ref name="request"/>
   </start>
+  
+  
   <define name="request">
     <element name="request">
       <optional>
         <attribute name="count"/>
+      </optional>
+      <optional>
         <attribute name="parallel"/>
+      </optional>
+      <optional>
         <attribute name="maxExecTime"/>
+      </optional>
+      <optional>
         <attribute name="method"/>
       </optional>
       <zeroOrMore>
@@ -17,6 +25,36 @@
           <attribute name="value"/>
         </element>
       </zeroOrMore>
+      
+      <zeroOrMore>
+		<optional>
+			<element name="regexPattern">
+				<ref name="patternContent"/>
+			</element>
+		</optional>
+		<optional>
+			<element name="xpathPattern">
+				<ref name="patternContent"/>
+			</element>
+		</optional>
+		<optional>
+			<element name="cssPattern">
+				<ref name="patternContent"/>
+			</element>
+		</optional>
+		<optional>
+			<element name="headerPattern">
+				<attribute name="key"/>
+				<optional>
+					<attribute name="expectedValue"/>
+				</optional>
+				<optional>
+					<attribute name="expectedValuePattern"/>
+				</optional>
+			</element>
+		</optional>
+      </zeroOrMore>
+      
       <optional>
         <element name="nextRequests">
           <oneOrMore>
@@ -25,5 +63,18 @@
         </element>
       </optional>
     </element>
+  </define>
+  
+  <define name="patternContent">
+	<attribute name="query"/>
+	<optional>
+		<attribute name="count"/>
+	</optional>
+	<optional>
+		<attribute name="minCount"/>
+	</optional>
+	<optional>
+		<attribute name="maxCount"/>
+	</optional>
   </define>
 </grammar>
