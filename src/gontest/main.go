@@ -30,7 +30,7 @@ func main(){
 	}
 	fmt.Println(req)
 	var client = http.Client{}
-	runner.Run(req, client)
+	runner.Run(req, &client, nil)
 	/*fmt.Println("-----------")
 	resp, err := http.Get("http://cyclonephp.org")
 	defer resp.Body.Close()

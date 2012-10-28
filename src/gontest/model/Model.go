@@ -26,6 +26,7 @@ type Header struct {
 // Represents a HTTP request
 type Request struct {
     Headers []Header `xml:"header"`
+    URL string `xml:"url,attr"`
     Method string `xml:"method,attr"`
     Count int `xml:"count,attr"`
     Parallel bool `xml:"parallel,attr"`
